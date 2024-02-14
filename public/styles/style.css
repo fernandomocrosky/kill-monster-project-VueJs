@@ -1,0 +1,119 @@
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel.scores,
+.result,
+.game-controllers {
+  display: flex;
+}
+
+.panel {
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.panel.scores {
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.result {
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.result .win {
+  color: #0b680b;
+}
+
+.result .lose {
+  color: #a52626;
+}
+
+.result .draw {
+  color: #f8b627;
+}
+
+.life {
+  border-radius: 5px;
+}
+
+.life-bar {
+  border-radius: 6px;
+}
+
+.life-bar {
+  height: 30px;
+  width: 300px;
+  border: 1px solid #a3a3a3;
+}
+
+.life {
+  height: 100%;
+  width: 50%;
+  background-color: green;
+}
+
+.life-bar .life.danger {
+  background-color: #b33232;
+}
+
+.player-life-text,
+.monster-life-text {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.character-img {
+  height: 200px;
+  width: 150px;
+}
+
+.player-img {
+  margin-right: 10px;
+}
+
+.game-controllers {
+  justify-content: center;
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 10px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.btn-attack {
+  background-color: #e64b4b;
+  color: #fff;
+}
+
+.btn-attack:hover {
+  background-color: #9e3333;
+}
+
+.btn-attack:active {
+  background-color: #db4444;
+}
+
+.icon {
+  margin: 0 10px 0 0;
+}
+
+.attack-icon {
+  color: #850000;
+}

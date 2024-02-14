@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kill Monster</title>
+    <link rel="stylesheet" href="./public/styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a6b51c1c02.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="panel scores">
+        <div class="player-card">
+          <img
+            src="https://img.favpng.com/13/24/9/dungeons-dragons-pathfinder-roleplaying-game-rogue-tiefling-player-character-png-favpng-Wz6k5R0Es5kCmLSGNf3RyMPJZ.jpg"
+            class="character-img"
+            alt="Human player character" />
+          <h1>Player</h1>
+          <div class="life-bar">
+            <div
+              class="life"
+              :class="{danger: playerLife <= 20}"
+              :style="{width: playerLife + '%'}"></div>
+          </div>
+          <div class="player-life-text">{{ playerLife }} %</div>
+        </div>
+
+        <div class="monster-card">
+          <img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/toys-childhood/monster-cartoon-icon.png"
+            class="character-img"
+            alt="Black monster image" />
+          <h1>Monster</h1>
+          <div class="life-bar">
+            <div
+              class="life"
+              :class="{danger: monsterLife <= 20}"
+              :style="{width: monsterLife + '%'}"></div>
+          </div>
+          <div class="monster-life-text">{{ monsterLife }} %</div>
+        </div>
+      </div>
+
+      <div v-if="hasResult" class="panel result">
+        <div v-if="monsterLife == 0 && playerLife == 0" class="draw">
+          Ambos Perderam !!
+        </div>
+        <div v-else-if="monsterLife == 0" class="win">Você Ganhou !!</div>
+        <div v-else="playerLife == 0" class="lose">Você Perdeu !!</div>
+      </div>
+
+      <div class="panel game-controllers">
+        <button class="btn btn-attack">
+          <i class="fa-solid fa-spoon icon attack-icon"></i>
+          Attack
+        </button>
+        <button class="btn btn-special-attack">Special Attack</button>
+        <button class="btn btn-heal">Heal</button>
+        <button class="btn btn-giveup">Give up</button>
+        <button class="btn btn-play">Play</button>
+      </div>
+
+      <div class="panel logs"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
