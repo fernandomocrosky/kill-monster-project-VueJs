@@ -13,7 +13,7 @@
   <body>
     <div id="app">
       <div class="panel scores">
-        <div class="player-card">
+        <div class="card player-card">
           <img
             src="https://img.favpng.com/13/24/9/dungeons-dragons-pathfinder-roleplaying-game-rogue-tiefling-player-character-png-favpng-Wz6k5R0Es5kCmLSGNf3RyMPJZ.jpg"
             class="character-img"
@@ -28,7 +28,7 @@
           <div class="player-life-text">{{ playerLife }} %</div>
         </div>
 
-        <div class="monster-card">
+        <div class="card monster-card">
           <img
             src="https://uxwing.com/wp-content/themes/uxwing/download/toys-childhood/monster-cartoon-icon.png"
             class="character-img"
@@ -57,10 +57,22 @@
           <i class="fa-solid fa-spoon icon attack-icon"></i>
           Attack
         </button>
-        <button class="btn btn-special-attack">Special Attack</button>
-        <button class="btn btn-heal">Heal</button>
-        <button class="btn btn-giveup">Give up</button>
-        <button class="btn btn-play">Play</button>
+        <button class="btn btn-special-attack">
+          <i class="fa-solid fa-fire icon special-attack-icon"></i>
+          Special Attack
+        </button>
+        <button class="btn btn-heal">
+          <i class="fa-solid fa-heart icon heal-icon"></i>
+          Heal
+        </button>
+        <button class="btn btn-giveup">
+          <i class="fa-solid fa-skull icon giveup-icon"></i>
+          Give up
+        </button>
+        <button class="btn btn-play">
+          <i class="fa-solid fa-play icon play-icon"></i>
+          Play
+        </button>
       </div>
 
       <div class="panel logs"></div>

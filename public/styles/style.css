@@ -2,6 +2,18 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
+@keyframes card-animation {
+  0% {
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    border: 1px solid;
+    border-color: rgba(68, 68, 68, 0.75);
+  }
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -23,6 +35,19 @@ html {
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
+}
+
+.card {
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  animation-name: card-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 100ms;
+  animation-fill-mode: forwards;
 }
 
 .result {
@@ -95,11 +120,15 @@ html {
   font-size: 1.3rem;
   text-transform: uppercase;
   text-align: center;
+  color: #cecece;
+}
+
+.btn:hover {
+  color: #fff;
 }
 
 .btn-attack {
   background-color: #e64b4b;
-  color: #fff;
 }
 
 .btn-attack:hover {
@@ -110,10 +139,34 @@ html {
   background-color: #db4444;
 }
 
+.btn-attack:active .attack-icon {
+  color: #cf0202;
+}
+
+.btn-special-attack {
+  background-color: orange;
+}
+
+.btn-special-attack:hover {
+  background-color: #d6951b;
+}
+
+.btn-special-attack:active .special-attack-icon {
+  color: #a19e99;
+}
+
+.btn-special-attack:active {
+  background-color: #ffb732;
+}
+
 .icon {
-  margin: 0 10px 0 0;
+  margin: 0 5px;
 }
 
 .attack-icon {
   color: #850000;
+}
+
+.special-attack-icon {
+  color: #c78306;
 }
