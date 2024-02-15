@@ -53,29 +53,43 @@
       </div>
 
       <div class="panel game-controllers">
-        <button class="btn btn-attack">
-          <i class="fa-solid fa-spoon icon attack-icon"></i>
-          Attack
-        </button>
-        <button class="btn btn-special-attack">
-          <i class="fa-solid fa-fire icon special-attack-icon"></i>
-          Special Attack
-        </button>
-        <button class="btn btn-heal">
-          <i class="fa-solid fa-heart icon heal-icon"></i>
-          Heal
-        </button>
-        <button class="btn btn-giveup">
-          <i class="fa-solid fa-skull icon giveup-icon"></i>
-          Give up
-        </button>
-        <button class="btn btn-play">
-          <i class="fa-solid fa-play icon play-icon"></i>
-          Play
-        </button>
+        <template v-if="running">
+          <button class="btn btn-attack" @click="attack(false)">
+            <i class="fa-solid fa-gun icon attack-icon"></i>
+            Attack
+          </button>
+
+          <button class="btn btn-special-attack" @click="attack(true)">
+            <i class="fa-solid fa-fire icon special-attack-icon"></i>
+            Special Attack
+          </button>
+
+          <button class="btn btn-heal" @click="healAndHurt">
+            <i class="fa-solid fa-heart icon heal-icon"></i>
+            Heal
+          </button>
+
+          <button class="btn btn-giveup" @click="running = !running">
+            <i class="fa-solid fa-skull icon giveup-icon"></i>
+            Give up
+          </button>
+        </template>
+
+        <template v-else
+          ><button class="btn btn-play" @click="startGame">
+            <i class="fa-solid fa-play icon play-icon"></i>
+            Play
+          </button></template
+        >
       </div>
 
-      <div class="panel logs"></div>
+      <div v-if="logs.length" class="panel logs">
+        <ul>
+          <li class="log" :class="log.cls" v-for="log in logs">
+            {{ log.text }}
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
